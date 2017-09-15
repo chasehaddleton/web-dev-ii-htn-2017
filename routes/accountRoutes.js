@@ -3,6 +3,7 @@
  */
 
 const accountHandlers = require('./handlers/accountHandlers');
+const createTransactionSchema = require('./schemas/transactionSchema');
 
 module.exports = [
 	{
@@ -18,7 +19,12 @@ module.exports = [
 	{
 		method: 'PUT',
 		path: '/account/{id}/transaction',
-		handler: accountHandlers.newTransaction
+		handler: accountHandlers.newTransaction,
+		config: {
+			validate: {
+				payload: createTransactionSchema
+			}
+		}
 	}
 ];
 
