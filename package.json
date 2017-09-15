@@ -1,0 +1,23 @@
+{
+  "name": "backend-demo",
+  "version": "0.0.1",
+  "description": "Sample backend for Hack the North 2017 Web Dev II - Backend talk",
+  "main": "app.js",
+  "scripts": {
+	"test": "echo \"Error: no test specified\" && exit 1",
+	"stste": "node app.js"
+  },
+  "author": "Chase Haddleton",
+  "license": "ISC",
+  "repository": {
+	"type": "git",
+	"url": "git+https://github.com/chasehaddleton/web-dev-ii-htn-2017.git"
+  },
+  "bugs": {
+	"url": "https://github.com/chasehaddleton/web-dev-ii-htn-2017.git"
+  },
+  "homepage": "https://github.com/chasehaddleton/web-dev-ii-htn-2017#readme",
+  "engines": {
+	"node": ">=8"
+  }
+}
