@@ -1,0 +1,20 @@
+{
+  "accountNumber": 2342342,
+  "balance": {
+	"value": 15000.91,
+	"currency": "CAD"
+  },
+  "links": [
+	{
+	  "rel": "self",
+	  "type": "GET",
+	  "href": "fakeBank.com/account/2342342"
+	},
+	{
+	  "rel": "deposit",
+	  "type": "PUT",
+	  "href": "fakeBank.com/account/2342342/deposit",
+	  "schema": "fakeBank.com/schema/account/deposit"
+	}
+  ]
+}

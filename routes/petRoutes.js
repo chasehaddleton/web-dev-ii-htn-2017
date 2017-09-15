@@ -2,13 +2,13 @@
  * Created by chasehaddleton on 2017-09-15.
  */
 
+const petHandlers = require('./handlers/petHandlers');
+
 module.exports = [
 	{
 		method: 'POST',
 		path: '/pet',
-		handler: (request, reply) => {
-			// do something
-		}
+		handler: petHandlers.newPet
 	},
 	{
 		method: 'PUT',
