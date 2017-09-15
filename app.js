@@ -5,6 +5,7 @@
 const Hapi = require('hapi');
 const glob = require('glob');
 const path = require('path');
+const mongoose = require('mongoose');
 
 const server = new Hapi.Server({
 	debug: {
@@ -19,7 +20,7 @@ server.connection({
 	}
 });
 
-glob.sync('route/*.js', {
+glob.sync('routes/*.js', {
 	root: __dirname
 }).forEach(file => {
 	const route = require(path.join(__dirname, file));
@@ -37,5 +38,17 @@ server.start(err => {
 		console.error(err);
 		throw err;
 	}
-});
 
+	mongoose.connect("mongodb://localhost/bankDemo", {useMongoClient: true}, (err) => {
+		if (err) {
+			err = Boom.internal(err);
+			console.error(err);
+
+			throw err;
+		} else {
+			console.info('MongoDB connected');
+		}
+	});
+
+	mongoose.Promise = global.Promise;
+});
